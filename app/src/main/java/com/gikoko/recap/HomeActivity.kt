@@ -21,7 +21,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.Spinner
-import androidx.appcompat.widget.SwitchCompat
+import android.widget.SwitchCompat
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -683,8 +683,8 @@ art = dp(6) }
         root.addView(startBtn)
 
         // cyber pulse animation
-        val pulseX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1f, 1.05f)
-        val pulseY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1f, 1.05f)
+        val pulseX = PropertyValuesHolder.ofFloat("scaleX", 1f, 1.05f)
+        val pulseY = PropertyValuesHolder.ofFloat("scaleY", 1f, 1.05f)
         ObjectAnimator.ofPropertyValuesHolder(startBtn, pulseX, pulseY).apply {
             duration = 800L
             repeatCount = ValueAnimator.INFINITE
