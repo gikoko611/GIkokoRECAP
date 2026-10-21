@@ -29,18 +29,14 @@ jobs:
           gradle-version: '8.7'
 
       - name: Build Debug APK
+        shell: bash
         run: gradle assembleDebug --no-daemon 2>&1 | tee build.log
 
-      - name: Report failure log as issue
-        if: failure()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          LOG="$(tail -n 400 build.log)"
-          gh issue create --title "CI build failed - debug log" --body "$LOG" || true
-
       - name: Rename APK
-        run: mv app/build/outputs/apk/debug/app-debug.apk GIkokoVideoRecap-debug.apk
+        run: |
+          APK="$(find app/build/outputs -type f -name '*.apk' | head -n1)"
+          if [ -z "$APK" ]; then echo "No APK found"; exit 1; fi
+          mv "$APK" GIkokoVideoRecap-debug.apk
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -60,3 +56,13 @@ jobs:
               --title "GIkoko Video Recap $TAG" \
               --notes "Auto build from GitHub Actions. GIkoko Video Recap - Cyber 3D UI app (Home UI + WebView studio). Debug APK: download and install directly on your phone (enable Unknown sources)."
           fi
+
+      - name: Report failure log as issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          LOG="$(tail -n 300 build.log 2>/dev/null || true)"
+          FIND="$(find app/build -type f -name '*.apk' 2>/dev/null || true)"
+          printf 'APK files found:\n%s\n\n===== build.log tail =====\n%s\n' "$FIND" "$LOG" > /tmp/body.md
+          gh issue create --title "CI build failed - debug log" --body-file /tmp/body.md || true
