@@ -21,10 +21,10 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.Spinner
-import android.widget.SwitchCompat
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import kotlin.math.roundToInt
 
 /**
@@ -53,8 +53,7 @@ class HomeActivity : AppCompatActivity() {
 
     // ---------- data ----------
     private data class Mode(val emoji: String, val name: String, val desc: String, val vip: Boolean)
-    private data class Voice(va
-l emoji: String, val name: String, val style: String)
+    private data class Voice(val emoji: String, val name: String, val style: String)
     private data class Cpu(val name: String, val status: String, val ok: Boolean)
 
     private val modes = listOf(
@@ -97,8 +96,7 @@ l emoji: String, val name: String, val style: String)
         Voice("👩🏻", "Autonoe", "Crisp"),
         Voice("👩🏼‍🦰", "Despina", "Smooth"),
         Voice("👧🏼", "Erinome", "Clear"),
-        Voice(
-"💃🏻", "Laomedeia", "Upbeat"),
+        Voice("💃🏻", "Laomedeia", "Upbeat"),
         Voice("🧕🏻", "Achernar", "Gentle"),
         Voice("💁🏻‍♀️", "Pulcherrima", "Dynamic"),
         Voice("🧘🏻‍♀️", "Vindemiatrix", "Calm"),
@@ -150,8 +148,7 @@ l emoji: String, val name: String, val style: String)
             setBackgroundResource(R.drawable.bg_card)
             setPadding(p, p, p, p)
             layoutParams = LinearLayout.LayoutParams(MATCH, WRAP).apply { bottomMargin = dp(14) }
-        
-}
+        }
     }
 
     private fun addTitle(parent: LinearLayout, text: String) {
@@ -203,8 +200,7 @@ l emoji: String, val name: String, val style: String)
         val seek = SeekBar(this).apply {
             max = maxValue
             this.progress = progress
-            progressTintList = ColorStateList.valu
-eOf(cGold)
+            progressTintList = ColorStateList.valueOf(cGold)
             thumbTintList = ColorStateList.valueOf(cGoldLight)
             layoutParams = LinearLayout.LayoutParams(MATCH, WRAP)
         }
@@ -256,8 +252,7 @@ eOf(cGold)
                 columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
                 marginStart = dp(3)
                 marginEnd = dp(3)
-        
-        topMargin = dp(6)
+                topMargin = dp(6)
                 bottomMargin = dp(6)
             }
         }
@@ -305,8 +300,7 @@ eOf(cGold)
             topRow.addView(TextView(this).apply {
                 text = "👑 VVIP"
                 setTextColor(cDark); textSize = 9f
-  
-              setBackgroundResource(R.drawable.bg_vvip)
+                setBackgroundResource(R.drawable.bg_vvip)
                 setPadding(dp(5), dp(2), dp(5), dp(2))
             })
         }
@@ -359,8 +353,7 @@ eOf(cGold)
     }
 
     // ============================================================
-    // onCrea
-te
+    // onCreate
     // ============================================================
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -409,8 +402,7 @@ te
             })
         }
         hs.addView(chipsRow)
-        roo
-t.addView(hs)
+        root.addView(hs)
     }
 
     // ---------- 2. render workers ----------
@@ -507,8 +499,7 @@ t.addView(hs)
 
         // female voices
         addDesc(c, "👩🏻 မိန်းကလေး ဇာတ်ကောင်အသံ [Female Role - 13 Female]", cText)
-        val femal
-eGrid = chipGrid(c, 3)
+        val femaleGrid = chipGrid(c, 3)
         femaleVoices.forEach { addVoice(femaleGrid, it, "femaleVoice") }
 
         root.addView(c)
@@ -529,7 +520,7 @@ eGrid = chipGrid(c, 3)
             setTextColor(cTextDim); textSize = 10f; gravity = Gravity.CENTER_VERTICAL
         })
         clone.addView(badgeRow)
-        addDesc(clone, "မိမိကိုယ်ပိုင်အသံ (သို့) ကြိုက်နှစ်သက်ရာအသံ ၅ ခုအထိ သိမ်းဆည်းနိုင်ပါသည်")
+        addDesc(clone, "မိမိကိုယ်ပိုင်အသံ (သို့) ကိိုက်နှစ်သက်ရာအသံ ၅ ခုအထိ သိမ်းဆည်းနိုင်ပါသည်")
         val slotGrid = chipGrid(clone, 2)
         for (i in 1..5) {
             slotGrid.addView(TextView(this).apply {
@@ -556,8 +547,7 @@ eGrid = chipGrid(c, 3)
         val c = card()
         addTitle(c, "⚙️ SETTINGS")
         addDesc(c, "🧠 AI Custom Prompt (Optional)", cText)
-        c.addView
-(EditText(this).apply {
+        c.addView(EditText(this).apply {
             hint = "ဥပမာ - ဇာတ်ကောင်အမည်များကို Mg Mg နှင့် Hla Hla ဟု သုံးပေးပါ။"
             setTextColor(cText); setHintTextColor(cTextDim); textSize = 13f
             setBackgroundResource(R.drawable.bg_input)
@@ -597,8 +587,7 @@ eGrid = chipGrid(c, 3)
             setBackgroundResource(R.drawable.bg_start_btn)
             stateListAnimator = null
             setOnClickListener { openStudio() }
-            layoutParams = LinearLayout.LayoutParams(0, WRAP, 1f).apply { marginSt
-art = dp(6) }
+            layoutParams = LinearLayout.LayoutParams(0, WRAP, 1f).apply { marginStart = dp(6) }
         })
         c.addView(row)
         root.addView(c)
@@ -646,8 +635,7 @@ art = dp(6) }
 
     // ---------- 10. smart sync splitting + script review ----------
     private fun buildSync(root: LinearLayout) {
-       
- val c = card()
+        val c = card()
         addTitle(c, "✂️ SMART SYNC SPLITTING (အပိုင်းခွဲစနစ်)")
         addDesc(c, "ဗီဒီယိုအရှည်များအတွက် ရုပ်နှင့်သံ အတိအကျကိုက်ညီရန် အပိုင်းခွဲ၍ Render လုပ်ပါ။")
         switchRow(c, "Auto Subtitles", true)
@@ -696,8 +684,7 @@ art = dp(6) }
     // ---------- 12. contact ----------
     private fun buildContact(root: LinearLayout) {
         root.addView(TextView(this).apply {
-            tex
-t = "အခက်အခဲ တစ်စုံတစ်ရာ ရှိပါက (သို့) အကောင့် သက်တမ်းတိုးလိုပါက Admin သို့ ဆက်သွယ်နိုင်ပါသည်။"
+            text = "အခက်အခဲ တစ်စုံတစ်ရာ ရှိပါက (သို့) အကောင့် သက်တမ်းတိုးလိုပါက Admin သို့ ဆက်သွယ်နိုင်ပါသည်။"
             setTextColor(cTextDim); textSize = 11f; gravity = Gravity.CENTER
             layoutParams = LinearLayout.LayoutParams(MATCH, WRAP).apply { topMargin = dp(10) }
         })
