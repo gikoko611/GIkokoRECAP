@@ -377,28 +377,15 @@ class HomeActivity : AppCompatActivity() {
 
     // ---------- 1. header ----------
     private fun buildHeader(root: LinearLayout) {
+        // Home screen logo — download (4).jpeg (G + Play "Video Recap" logo)
+        // ⚠️ README အတိုင်း drawable ထဲ img_splash_logo အဖြစ် ထည့်ပေးရမည်
         root.addView(ImageView(this).apply {
-            setImageResource(R.drawable.ic_monogram)
-            layoutParams = LinearLayout.LayoutParams(dp(120), dp(120)).apply { topMargin = dp(6) }
+            setImageResource(R.drawable.img_splash_logo)
+            adjustViewBounds = true
+            scaleType = ImageView.ScaleType.FIT_CENTER
+            layoutParams = LinearLayout.LayoutParams(MATCH, WRAP).apply { topMargin = dp(6) }
         })
-        root.addView(TextView(this).apply {
-            text = "TRUSTME RECAP AI PRO"
-            setTextColor(cGold)
-            textSize = 20f
-            typeface = Typeface.DEFAULT_BOLD
-            letterSpacing = 0.1f
-            gravity = Gravity.CENTER
-            setShadowLayer(16f, 0f, 0f, Color.parseColor("#80F5B301"))
-        })
-        root.addView(TextView(this).apply {
-            text = "AI Studio & Cloud System • v10.9.1"
-            setTextColor(cTextDim); textSize = 11f; gravity = Gravity.CENTER
-        })
-        root.addView(TextView(this).apply {
-            text = "အသုံးပြုသူများ အဆင်ပြေချောမွေ့စွာ အသုံးပြုနိုင်ရန် TRUSTME RECAP AI PRO TEAM မှ အစွမ်းကုန် ကြိုးစားဖန်တီးပေးထားပါသည်။"
-            setTextColor(cGreen); textSize = 11f; gravity = Gravity.CENTER
-            layoutParams = LinearLayout.LayoutParams(MATCH, WRAP).apply { topMargin = dp(8); bottomMargin = dp(4) }
-        })
+
         // user chips
         val hs = HorizontalScrollView(this).apply {
             isHorizontalScrollBarEnabled = false

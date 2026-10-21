@@ -5,10 +5,11 @@ trustmeaipro.org website UI ကို Cyber 3D Animation style native Android UI
 ## 🔄 App Flow
 1. SplashActivity — Cyber 3D animated splash (perspective grid + gold particles + glow) — ၂.၆ စက်
 2. HomeActivity — TRUSTME RECAP STUDIO UI အပြည့် (native Cyber 3D style)
+   - Home screen logo (download (4).jpeg — G + Play Video Recap)
    - Render Workers (CPU 1/2/3 status + Parallel Mode)
    - Free API Key section
    - AI Processing Mode (mode ၈ ခု + VVIP badges)
-   - Select Dubbing Voices (Myanmar/English/Thai/Chinese tabs + Pitch slider + ယောက်ျားသံ ၁၇ + မိန်းကလေးသံ ၁၃)
+   - Select Dubbing Voices (tabs + Pitch slider + ယောက်ျားသံ ၁၇ + မိန်းကလေးသံ ၁၃)
    - Custom Voice Clone Library (5 slots)
    - Settings (Custom Prompt + Aspect Ratio)
    - Upload File / Paste URL
@@ -19,23 +20,29 @@ trustmeaipro.org website UI ကို Cyber 3D Animation style native Android UI
    - Contact Admin (Facebook)
 3. MainActivity — WebView studio (trustmeaipro.org) — တကယ့် processing များ ဒီမှာ ဆက်လုပ်မည်
 
-## 🛠 Build လုပ်နည်း
-1. git clone https://github.com/gikoko611/GIkokoRECAP.git
-2. Android Studio နဲ့ project ဖွင့်ပါ (Gradle sync အလိုအလျောက်လုပ်ပါမယ်)
-3. Run ▶ နဲ့ ဖုန်းမှာ စမ်းသပ်ပါ
-4. APK ထုတ်ရန် — Build > Build App Bundle(s)/APK(s) > Build APK(s)
-5. Release APK — Build > Generate Signed APK (keystore ဖန်တီးပါ၊ password မမေ့ပါနဲ့)
+## ⚠️ မဖြစ်မနေ လုပ်ရမည် — Home Screen Logo ထည့်ခြင်း
 
-## 🖼 ကိုယ်ပိုင် JPEG ပုံတွေ ထည့်နည်း
+Home screen အပေါ်ဆုံးမှာ ပေးထားတဲ့ logo ပုံ (download (4).jpeg — G + Play "Video Recap" / POWERED BY I KO KO) ပေါ်ရန်အတွက် ဒီအဆင့်ကို မဖြစ်မနေ လုပ်ပေးပါ (မထည့်ဘဲ build ရင် error တက်ပါမည်):
+
+1. download (4).jpeg ကို computer ထဲ ရယူပါ
+2. Android Studio မှာ app/src/main/res/drawable/ folder ပေါ် right-click > Show in Explorer (Mac: Reveal in Finder)
+3. ပုံကို အဲ့ဒီ folder ထဲကို ကူးထည့်ပြီး နာမည်ကို img_splash_logo ဟု ပေးပါ
+   (.jpeg အတိုင်းဆိုရင် img_splash_logo.jpeg — စာလုံးအသေး၊ space မထည့်ပါနဲ့)
+4. Build လုပ်ပါ — Home screen အပေါ်ဆုံးမှာ ပုံ အလိုအလျောက် ပေါ်လာမည်
+   (Title စာသားတွေကတော့ ဖျက်ထားပြီးသား — logo ပုံပဲ ပေါ်မည်)
 
 ### App Icon — download (1).jpeg (G.I ပန်းကနုတ် design)
 1. Android Studio မှာ res folder ပေါ် right-click > New > Image Asset
 2. Asset Type: Image, Path: download (1).jpeg ရွေးပါ
 3. Finish နှိပ်ရုံ — ic_launcher အားလုံး auto ထုတ်ပေးပါမယ်
 
-### Splash / Home Logo — download (4).jpeg (G + Play Video Recap)
-1. download (4).jpeg ကို app/src/main/res/drawable/ ထဲကို img_splash_logo.png နာမည်နဲ့ ကူးထည့်ပါ
-2. res/layout/activity_splash.xml မှာ @drawable/ic_monogram ကို @drawable/img_splash_logo အဖြစ် ပြောင်းပါ
+## 🛠 Build လုပ်နည်း
+1. git clone https://github.com/gikoko611/GIkokoRECAP.git
+2. Android Studio နဲ့ project ဖွင့်ပါ (Gradle sync အလိုအလျောက်လုပ်ပါမယ်)
+3. အထက်ပါ logo ထည့်ခြင်းအဆင့်ကို လုပ်ပါ
+4. Run ▶ နဲ့ ဖုန်းမှာ စမ်းသပ်ပါ
+5. APK ထုတ်ရန် — Build > Build App Bundle(s)/APK(s) > Build APK(s)
+6. Release APK — Build > Generate Signed APK (keystore ဖန်တီးပါ၊ password မမေ့ပါနဲ့)
 
 ## ⚙ Customize
 - Website URL — MainActivity.kt ထဲက HOME_URL
