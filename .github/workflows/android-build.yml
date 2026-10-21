@@ -49,7 +49,5 @@ jobs:
           else
             gh release create "$TAG" GIkokoVideoRecap-debug.apk \
               --title "GIkoko Video Recap $TAG" \
-              --notes "Auto build from GitHub Actions — Cyber 3D UI Recap app (WebView studio + Home UI).
-
-⚠️ Debug APK — ဖုန်းထဲ တန်း download လုပ်ပြီး install လို့ရပါတယ် (Unknown sources ခွင့်ပြုရန်လိုအပ်ပါမည်)။"
+              --notes "Auto build from GitHub Actions. GIkoko Video Recap - Cyber 3D UI app (Home UI + WebView studio). Debug APK: download and install directly on your phone (enable Unknown sources)."
           fi
