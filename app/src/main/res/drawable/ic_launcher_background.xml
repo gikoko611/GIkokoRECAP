@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- dark cyber grid background -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:pathData="M0,0 L108,0 L108,108 L0,108 Z"
+        android:fillColor="#05070D" />
+
+    <!-- subtle perspective grid -->
+    <path
+        android:pathData="M0,70 L108,70 M0,84 L108,84 M0,97 L108,97 M20,60 L-6,108 M54,60 L54,108 M88,60 L114,108 M-10,86 L118,86"
+        android:strokeColor="#1FF5B301"
+        android:strokeWidth="0.7" />
+
+    <!-- center glow -->
+    <path
+        android:pathData="M54,56 m-34,0 a34,34 0 1,0 68,0 a34,34 0 1,0 -68,0"
+        android:fillColor="#0FF5B301" />
+</vector>
