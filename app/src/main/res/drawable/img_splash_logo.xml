@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PLACEHOLDER logo — တကယ့်ပုံ (download (4).jpeg) နဲ့ အစားထိုးရန် README ကြည့်ပါ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="100dp"
+    android:viewportWidth="320"
+    android:viewportHeight="100">
+
+    <!-- G ring -->
+    <path
+        android:pathData="M52,16 A34,34 0 1,0 81.4,33"
+        android:strokeColor="#FFD75E"
+        android:strokeWidth="8"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round" />
+
+    <!-- G crossbar -->
+    <path
+        android:pathData="M52,50 H84"
+        android:strokeColor="#FFD75E"
+        android:strokeWidth="8"
+        android:strokeLineCap="round" />
+
+    <!-- play triangle -->
+    <path
+        android:pathData="M46,38 L46,62 L66,50 Z"
+        android:fillColor="#F5B301" />
+
+    <!-- I (serif) -->
+    <path
+        android:pathData="M104,26 H126 V32 H112 V68 H126 V74 H104 V68 H118 V32 H104 Z"
+        android:fillColor="#FFD75E" />
+</vector>
