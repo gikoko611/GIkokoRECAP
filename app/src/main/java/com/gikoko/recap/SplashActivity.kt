@@ -41,9 +41,9 @@ class SplashActivity : AppCompatActivity() {
         tagline.animate().alpha(0.9f)
             .setStartDelay(1100L).setDuration(700L).start()
 
-        // ---- WebView ဆီ ကူးပြောင်း ----
+        // ---- Cyber 3D Home UI ဆီ ကူးပြောင်း ----
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }, 2600L)
     }

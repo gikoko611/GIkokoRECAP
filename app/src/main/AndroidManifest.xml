@@ -24,7 +24,13 @@
             </intent-filter>
         </activity>
 
-        <!-- Website WebView -->
+        <!-- Cyber 3D native Home UI (TRUSTME RECAP STUDIO replica) -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Website WebView Studio -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
