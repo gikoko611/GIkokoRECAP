@@ -1,5 +1,7 @@
 # GIKOKO VIDEO RECAP — Android App (Cyber 3D)
 
+![Build & Release](https://github.com/gikoko611/GIkokoRECAP/actions/workflows/android-build.yml/badge.svg)
+
 trustmeaipro.org website UI ကို Cyber 3D Animation style native Android UI အဖြစ် ပြန်ဆောက်ထားတဲ့ app project ပါ။
 
 ## 🤖 GitHub Actions — Auto Build + Release
